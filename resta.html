@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      /*background-image: url("bk.jpg");
+      background-repeat: no-repeat;
+      background-size: cover */
+      position: relative;
+    }
+
+    .box {
+      margin: 20px 0px 20px 30px;
+      float: left;
+      width: 20%;
+      /*height: 350px;*/
+
+
+    }
+
+    .pic {
+      /*width: 100%;*/
+      height: 200px;
+      /*background-image: url('bk.jpg');*/
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid black;
+      margin: 10px 20px 10px 20px;
+
+    }
+
+
+    .clearfix {
+      content: "";
+      clear: both;
+      display: flex;
+      height: 100vh;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-around;
+      padding-right: 30px;
+    }
+
+    .fl {
+
+      /* display: flex; */
+      /* flex-wrap: wrap; */
+      margin-top: auto;
+
+
+
+
+
+    }
+
+    .des {
+
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      position: relative;
+      height: 150px;
+
+
+    }
+
+    .name {
+      font-size: large;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      margin-top: 0px;
+
+    }
+
+    .mat {
+      padding-top: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .button {
+      border-radius: 8px;
+      height: 40px;
+      display: inline;
+      width: 80px;
+      float: right;
+      padding-right: 10px;
+      /*position: absolute;*/
+      bottom: inherit;
+    }
+
+    .header {
+      background-color: maroon;
+      width: 100%;
+      height: 150px;
+
+    }
+
+    .nav {
+      width: 100%;
+      height: 75px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      background-color: burlywood;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 0px;
+    }
+
+    .nav ul {
+      list-style-type: none;
+      padding: 0px;
+
+    }
+
+    .nav li {
+      color: black;
+      float: left;
+      font-size: x-large;
+      border-right: 2px solid black;
+      text-align: center;
+      height: max-content;
+      width: 250px;
+    }
+
+    .nav li a {
+      display: block;
+
+
+      text-decoration: none;
+
+    }
+
+    .nav a:hover {
+      background-color: goldenrod;
+      color: black;
+      text-decoration: underline;
+  </style>
+</head>
+
+<body>
+
+  <div class="header"><img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><input
+      type="text" placeholder="Search.."
+      style="width:800px; margin: 95px 50px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
+  </div>
+  <div class="nav">
+    <ul>
+      <li><a href="#Home">Home</a></li>
+      <li><a href="">Menu</a></li>
+      <li><a href="">FoodBag</a></li>
+      <li><a href="">My Account</a></li>
+    </ul>
+  </div>
+
+  <div class="clearfix">
+    <div class="box" style="background-color: #bbb">
+      <div class="pic" style="background-image: url('bk1.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Nutella Brownie
+            Thick Shakes</b>
+        </p>
+        <p class="mat"> Good old Nutela laced with
+          decadent Brownie and heavenly Vanilla ice cream. </p>
+        <div class="fl">
+          <p style=" width:50%; float:left;"><b>&#x20b9; 200/-</b></p>
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+    </div>
+    <div class="box" style="background-color:#ccc">
+      <div class="pic" style="background-image: url('bb.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Rasmalai</b>
+        </p>
+        <p class="mat">Dumplings made from cottage or ricotta cheese soaked in sweetened, thickened milk, flavoured with
+          cardamom and saffron.
+        </p>
+        <div class="fl">
+          <p style="width:50%;float:left;"><b>&#x20b9; 30/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+    </div>
+    <div class="box" style="background-color:#ddd">
+      <div class="pic" style="background-image: url('ic.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Choco almond </b>
+        </p>
+        <p class="mat"> Ice Cream Mixed with
+          Brownie, Rich Chocolate Syrup,chocochips and topped with Nuts. </p>
+        <div class="fl">
+          <p style="width:50%;float:left;"><b>&#x20b9; 180/-</b></p>
+
+
+          <input type="button" class="button" name="Add" value="Add" />
+
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('dn.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Choco Pop Donut</b>
+        </p>
+        <p class="mat"> Ring donut coated with dark
+          compound chocalate and coated with colorful strands. </p>
+        <div class="fl">
+          <p style="width:50%;float:left;"><b>&#x20b9;80/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('sd.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Masala Salad</b>
+        </p>
+        <p class="mat"> with crispy tortilla
+          strips, carrots,corn & blackbean salsa,tomatoes and cheese. served with cool ranch dressing. </p>
+        <div class="fl">
+          <p style="width:50%;float:left;"><b>&#x20b9;225/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#ccc">
+      <div class="pic" style="background-image: url('so.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Veg Manchow Soup</b>
+        </p>
+        <p class="mat"> A Spicy & hot soup topped
+          with fried noodles. </p>
+        <div class="fl">
+          <p style="width:50%;float:left;"><b>&#x20b9;100/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#ddd">
+      <div class="pic" style="background-image: url('or.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Crispy Onion
+            Rings</b>
+        </p>
+        <p class="mat"> 5 pcs. </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;120/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('vp.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Mixed Combo
+            Platter</b>
+        </p>
+        <p class="mat">A assorted cambo platter of
+          both veg & non veg appetizers served with dipping sauces. </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;290/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('pa.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Mac and Cheese
+            Pasta</b>
+        </p>
+        <p class="mat">Macaroni pasta baked in
+          creamy bechamel sauce. </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;260/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#ccc">
+      <div class="pic" style="background-image: url('bs.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Cottage Cheese
+            Burger</b>
+        </p>
+        <p class="mat">Golden crust Paneer Patty on
+          a bed of lettuce in between burger buns ,served with fries. </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;200/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#ddd">
+      <div class="pic" style="background-image: url('pz.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Veg Overload</b>
+        </p>
+        <p class="mat">Paneer,Broccoli,bell
+          peppers,black olive,Zucchini,mozzarella cheese. </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;230/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('sw.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Veg Club
+            Sandwich</b>
+        </p>
+        <p class="mat"> Triple decker bread with
+          assorted vegetables &Cheese,served with fries. </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;160/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('ma.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Dry Manchurian</b>
+        </p>
+        <p class="mat"> Double shot expresso
+          blended with vanilla icecream </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;150/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('no.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>American
+            Chopsuey</b>
+        </p>
+        <p class="mat"> Double shot expresso
+          blended with vanilla icecream </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;200/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('pr.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Paneer Paratha </b>
+        </p>
+        <p class="mat"> Double shot expresso
+          blended with vanilla icecream </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;130/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+    <div class="box" style="background-color:#bbb">
+      <div class="pic" style="background-image: url('cb.jpg');"></div>
+      <div class="des">
+        <p class="name"><b>Special Nizam
+            Biryani</b>
+        </p>
+        <p class="mat"> Double shot expresso
+          blended with vanilla icecream </p>
+        <div class="fl">
+          <p style="width:50%;float:left"><b>&#x20b9;300/-</b></p>
+
+          <input type="button" class="button" name="Add" value="Add" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

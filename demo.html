@@ -1,0 +1,222 @@
+<html>
+
+<head>
+
+  <title>Calculator</title>
+  <style type="text/css">
+    .main {
+      margin: 20 10 20 380;
+    }
+
+    .result {
+      margin: 20 10 20 400;
+    }
+
+    .button {
+      background-color: green;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+
+    }
+
+    .button1 {
+      background-color: green;
+      border: none;
+      color: black;
+      padding: 17px 23px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+
+    }
+
+    .opr {
+      margin: 20 10 20 -55;
+    }
+  </style>
+
+
+  <script type="text/javascript">
+
+    /* function calculate(h){
+   	
+     var z= document.Result.result;
+     if(a.value=="+"){
+       z.value = x+y;
+     }
+     else if(a.value=="-"){z.value = x-y;}
+     else if(a.value=="*"){z.value = x*y;}
+     else if(a.value=="/"){z.value = x/y;}
+     else if(a.value=="%"){z.value = x%y;}
+ 
+ 
+ 
+ 
+   } */
+
+
+    function addVal(k) {
+      var res;
+
+      if (k === '+' || k === '-' || k === '*' || k === '/' || k === '%' || k === '=') {
+        var val = document.getElementById('display').value;
+        if (val[val.length - 1] != '+' && val[val.length - 1] != '-' && val[val.length - 1] != '*' && val[val.length - 1] != '/' && val[val.length - 1] != '%') {
+          res = this.calc(val);
+          if (k !== '=')
+            res += k;
+        }
+      }
+      else
+        document.getElementById('display').value += k;
+      if (res != undefined)
+        document.getElementById('display').value = res;
+
+    }
+    function calc(k) {
+      //return eval(h);
+      var res = '';
+      var l = k.length;
+      if (k[l - 1] != '+' && k[l - 1] != '-' && k[l - 1] != '*' && k[l - 1] != '/' && k[l - 1] != '%') {
+        for (var i = 0; i < l; i++) {
+          if (k[i] == '+' || k[i] == '-' || k[i] == '*' || k[i] == '/' || k[i] == '%') {
+            var a = k.slice(0, i);
+            var b = k.slice(i + 1, l);
+            if (k[i] == '+')
+              return parseInt(a) + parseInt(b);
+            else if (k[i] == '-')
+              return parseInt(a) - parseInt(b);
+            else if (k[i] == '*')
+              return parseInt(a) * parseInt(b);
+            else if (k[i] == '/')
+              return parseInt(a) / parseInt(b);
+            else if (k[i] == '%')
+              return parseInt(a) % parseInt(b);
+            //   else
+            //     document.write("Invalid Operator");
+            // } //else {
+            //if (k[i] != '=')
+            //res += k[i];
+            //else return res;
+            //}
+          }
+        }
+      }
+      return k;
+
+    }
+    function onec() {
+      var q = document.getElementById('display').value;
+      //var res1 = q.substring(0, q.length - 1);
+      document.getElementById('display').value = q.substring(0, q.length - 1);
+
+    }
+
+
+
+
+    function handMouseDownEvent(x) {
+
+      x.style.color = "black";
+
+      x.style.backgroundColor = "grey"
+
+      x.innerHTML = "MOUSEDOWN";
+
+    }
+
+
+
+    function handMouseUpEvent(y) {
+
+      y.style.color = "black";
+
+      y.style.backgroundColor = "green";
+
+      y.innerHTML = "MOUSEUP";
+
+    }
+
+
+
+  </script>
+
+
+
+<body>
+  <div class="result">
+    <form name="cal">
+
+
+      <textarea id="display" type="text" name="result" cols="30" rows="5"></textarea>
+  </div>
+  <div class="main">
+
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="button" name="one" value="1" onclick="addVal(1)"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="two" value="2" onclick="addVal(2)" onmousedown="handMouseDownEvent(this)"
+      onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="three" value="3" onclick="addVal(3)"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="button" name="four" value="4" onclick="addVal(4)"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="five" value="5" onclick="addVal(5)" onmousedown="handMouseDownEvent(this)"
+      onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="six" value="6" onclick="addVal(6)" onmousedown="handMouseDownEvent(this)"
+      onmouseup="handMouseUpEvent(this)" /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="button" name="seven" value="7" onclick="addVal(7)"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="eight" value="8" onclick="addVal(8)"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" /> <input type="button" class="button"
+      name="nine" value="9" onclick="addVal(9)" onmousedown="handMouseDownEvent(this)"
+      onmouseup="handMouseUpEvent(this)" /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+    <input type="button" class="button" name="add" value="+" onclick="addVal('+')"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="0" value="0" onclick="addVal(0)" onmousedown="handMouseDownEvent(this)"
+      onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" name="sub" value="-" onclick="addVal('-')"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+    <input type="button" class="button" name="mul" value="*" onclick="addVal('*')"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+
+    &nbsp;<input type="button" class="button" name="div" value="/" onclick="addVal('/')"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    &nbsp;<input type="button" class="button" name="mod" value="%" onclick="addVal('%')"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" /> <br>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="button" class="button1" name="undo" value="Undo" onclick="onec()"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button" value="=" onclick="addVal('=')" onclick="calc()"
+      onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)" />
+    <input type="button" class="button1" value="Clear" onclick="document.getElementById('display').value = ''" />
+
+
+    </form>
+
+
+
+    <p onmousedown="handMouseDownEvent(this)" onmouseup="handMouseUpEvent(this)">
+    </p>
+
+</body>
+
+</head>
+
+</html>

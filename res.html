@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      /*background-image: url("bk.jpg");
+      background-repeat: no-repeat;
+      background-size: cover */
+      position: relative;
+    }
+
+    .box {
+      margin: 20px 0px 20px 30px;
+      float: left;
+      width: 20%;
+      /*height: 350px;*/
+
+
+    }
+
+    .pic {
+      /*width: 100%;*/
+      height: 200px;
+      /*background-image: url('bk.jpg');*/
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid black;
+      margin: 10px 20px 10px 20px;
+
+    }
+
+
+    .clearfix {
+      content: "";
+      clear: both;
+      display: flex;
+      height: 100vh;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-around;
+      padding-right: 30px;
+    }
+
+    .fl {
+
+      /* display: flex; */
+      /* flex-wrap: wrap; */
+      margin-top: auto;
+
+
+
+
+
+    }
+
+    .des {
+
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      position: relative;
+      height: 150px;
+
+
+    }
+
+    .name {
+      font-size: large;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      margin-top: 0px;
+
+    }
+
+    .mat {
+      padding-top: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .rate {
+      width: 50%;
+      float: left;
+
+    }
+
+    .button {
+      border-radius: 8px;
+      height: 40px;
+      display: inline;
+      width: 80px;
+      float: right;
+      padding-right: 10px;
+      /*position: absolute;*/
+      bottom: inherit;
+    }
+
+    .header {
+      background-color: maroon;
+      width: 100%;
+      height: 150px;
+
+    }
+
+    .nav {
+      width: 100%;
+      height: 75px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      background-color: burlywood;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      padding: 0px;
+    }
+
+    .nav ul {
+      list-style-type: none;
+      padding: 0px;
+
+    }
+
+    .nav li {
+      color: black;
+      float: left;
+      font-size: x-large;
+      border-right: 2px solid black;
+      text-align: center;
+      height: max-content;
+      width: 250px;
+    }
+
+    .nav li a {
+      display: block;
+
+
+      text-decoration: none;
+
+    }
+
+    .nav a:hover {
+      background-color: goldenrod;
+      color: black;
+      text-decoration: underline;
+  </style>
+</head>
+
+<body>
+  <div class="header"><img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><input
+      type="text" placeholder="Search.."
+      style="width:800px; margin: 95px 50px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
+  </div>
+  <div class="nav">
+    <ul>
+      <li><a href="#Home">Home</a></li>
+      <li><a href="">Menu</a></li>
+      <li><a href="">FoodBag</a></li>
+      <li><a href="">My Account</a></li>
+    </ul>
+  </div>
+  <div id="card">card</div>
+
+  <script type="text/javascript">
+    /* var val = [{"#bbb", "bk1.jpg", "Nutella Brownie
+              Thick Shakes", "Good old Nutela laced with
+            decadent Brownie and heavenly Vanilla ice cream.", "200/-"}, {"#ccc","bb.jpg","Rasmalai","Dumplings made from cottage or ricotta cheese soaked in sweetened, thickened milk, flavoured with
+            cardamom and saffron.","30/-"}]; */
+    var newElement = document.getElementById("card");
+    newElement.appendChild(div1);
+
+    var div1 = document.createElement("div");
+    div1.className += "clearfix";
+    var div2 = document.createElement("div");
+    div2.className += "box";
+    div2.style.backgroundColor = "gray";
+    div1.appendChild(div2);
+    var div3 = document.createElement("div");
+    div3.className += "pic";
+    div3.style.backgroundImage = "URL('bk1.jpg')";
+    var div4 = document.createElement("div");
+    div3.className += "des";
+    var para1 = document.createElement("p");
+    para1.className += "name";
+    var node1 = "Nutella ...";
+    document.createTextNode(node1);
+    /* var node1 = document.createTextNode("Nutella Brownie 
+            Thick Shakes");
+    para1.appendChild(node1);*/
+    var para2 = document.createElement("p");
+    para2.className += "mat";
+    var node2 = "Nutella ...";
+    document.createTextNode(node2);
+    /*var node2 = document.createTextNode("Good old Nutela laced with
+          decadent Brownie and heavenly Vanilla ice cream.");
+
+    para2.appendChild(node2);*/
+    var div5 = document.createElement("div");
+    div5.className += "fl";
+    var para3 = document.createElement("p");
+    para3.className += "rate";
+    var node3 = document.createTextNode("&#x20b9; 200/-");
+    para3.appendChild(node3);
+    div5.appendChild(para3);
+    var x = document.createElement("BUTTON");
+
+
+
+
+
+
+
+
+
+
+
+
+    /* <div class="clearfix">
+       <div class="box" style="background-color: #bbb">
+         <div class="pic" style="background-image: url('bk1.jpg');"></div>
+         <div class="des">
+           <p class="name"><b>Nutella Brownie
+             Thick Shakes</b>
+           </p>
+           <p class="mat"> Good old Nutela laced with
+           decadent Brownie and heavenly Vanilla ice cream. </p>
+           <div class="fl">
+             <p style=" width:50%; float:left;"><b>&#x20b9; 200/-</b></p>
+             <input type="button" class="button" name="Add" value="Add" />
+           </div>
+         </div>
+       </div>*/
+  </script>
+</body>
+
+</html>

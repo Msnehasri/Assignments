@@ -174,88 +174,106 @@
     /*var itemInfo = [{
       "colour": "#bbb", "image": "bk1.jpg", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
     }]*/
+    var i;
     for (i = 0; i <= 16; i++) {
-      var itemInfo = [{
-        "colour": "#bbb", "image": "bk1", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
-      }{
-        colour": "#ccc", "image": "bb", "name": "Rasmalai", "des": "Dumplings made from cottage or ricotta cheese soaked in sweetened, thickened milk, flavoured with cardamom and saffron.", "price": "80"}
-      {
-          colour": "#ddd", "image": "ic", "name": "Choco almond ", "des": "Ice Cream Mixed with Brownie, Rich Chocolate Syrup, chocochips and topped with Nuts.", "price": "180"}
+      var itemInfo =
+        [{
+          "colour": "#bbb", "image": "bk1.jpg", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
+        },
         {
-            colour": "#bbb", "image": "dn", "name": "Choco Pop Donut", "des": "Ring donut coated with dark compound chocalate and coated with colorful strands.", "price": "225"}
-          {
-                colour": "#bbb", "image": "sd", "name": "Masala Salad", "des": "With crispy tortilla strips, carrots, corn & blackbean salsa, tomatoes and cheese.served with cool ranch dressing.", "price": "100"}
-            {
-                colour": "#ccc", "image": "so", "name": "Veg Manchow Soup", "des": "A Spicy & hot soup topped with fried noodles.", "price": "120"}
-              {
-              colour": "#ddd", "image": "or", "name": "Crispy Onion Rings", "des": "5 pcs.", "price": "290"}
-                {
-                  colour": "#bbb", "image": "vp", "name": "Mixed Combo Platter", "des": "A assorted cambo platter of both veg & non veg appetizers served with dipping sauces.", "price": "260"}
-                  {
-                colour": "#bbb", "image": "pa", "name": "Mac and Cheese Pasta", "des": "Macaroni pasta baked in creamy bechamel sauce.", "price": "200"}
-                    {
-                  colour": "#ccc", "image": "bs", "name": "Cottage Cheese Burger", "des": "Golden crust Paneer Patty on a bed of lettuce in between burger buns, served with fries.", "price": "230"}
-                      {
-                    colour": "#ddd", "image": "pz", "name": "Veg Overload", "des": "Paneer, Broccoli, bell peppers, black olive, Zucchini, mozzarella cheese.", "price": "160"}
-                        {
-                        colour": "#bbb", "image": "sw", "name": "Veg Club Sandwich", "des": "Triple decker bread with assorted vegetables & Cheese, served with fries.", "price": "150"}
-                          {
-                      colour": "#bbb", "image": "ma", "name": "Dry Manchuria", "des": "Double shot expresso blended with vanilla icecream", "price": "200"}
-                            {
-                        colour": "#ccc", "image": "no", "name": "American Chopsuey", "des": "Double shot expresso blended with vanilla icecream", "price": "200"}
-                              {
-                          colour": "#ddd", "image": "pr", "name": "Paneer Paratha", "des": "Double shot expresso blended with vanilla icecream", "price": "130"}
-                                {
-                            colour": "#bbb", "image": "cb", "name": "Special Nizam Biryani", "des": "Double shot expresso blended with vanilla icecream", "price": "300"}]
+          "colour": "#ccc", "image": "bb", "name": "Rasmalai", "des": "Dumplings made from cottage or ricotta cheese soaked in sweetened, thickened milk, flavoured with cardamom and saffron.", "price": "80"
+        },
+        {
+          "colour": "#ddd", "image": "ic", "name": "Choco almond ", "des": "Ice Cream Mixed with Brownie, Rich Chocolate Syrup, chocochips and topped with Nuts.", "price": "180"
+        },
+        {
+          "colour": "#bbb", "image": "dn", "name": "Choco Pop Donut", "des": "Ring donut coated with dark compound chocalate and coated with colorful strands.", "price": "225"
+        },
+        {
+          "colour": "#bbb", "image": "sd", "name": "Masala Salad", "des": "With crispy tortilla strips, carrots, corn & blackbean salsa, tomatoes and cheese.served with cool ranch dressing.", "price": "100"
+        },
+        {
+          "colour": "#ccc", "image": "so", "name": "Veg Manchow Soup", "des": "A Spicy & hot soup topped with fried noodles.", "price": "120"
+        },
+        {
+          "colour": "#ddd", "image": "or", "name": "Crispy Onion Rings", "des": "5 pcs.", "price": "290"
+        },
+        {
+          "colour": "#bbb", "image": "vp", "name": "Mixed Combo Platter", "des": "A assorted cambo platter of both veg & non veg appetizers served with dipping sauces.", "price": "260"
+        },
+        {
+          "colour": "#bbb", "image": "pa", "name": "Mac and Cheese Pasta", "des": "Macaroni pasta baked in creamy bechamel sauce.", "price": "200"
+        },
+        {
+          "colour": "#ccc", "image": "bs", "name": "Cottage Cheese Burger", "des": "Golden crust Paneer Patty on a bed of lettuce in between burger buns, served with fries.", "price": "230"
+        },
+        {
+          "colour": "#ddd", "image": "pz", "name": "Veg Overload", "des": "Paneer, Broccoli, bell peppers, black olive, Zucchini, mozzarella cheese.", "price": "160"
+        },
+        {
+          "colour": "#bbb", "image": "sw", "name": "Veg Club Sandwich", "des": "Triple decker bread with assorted vegetables & Cheese, served with fries.", "price": "150"
+        },
+        {
+          "colour": "#bbb", "image": "ma", "name": "Dry Manchuria", "des": "Double shot expresso blended with vanilla icecream", "price": "200"
+        },
+        {
+          "colour": "#ccc", "image": "no", "name": "American Chopsuey", "des": "Double shot expresso blended with vanilla icecream", "price": "200"
+        },
+        {
+          "colour": "#ddd", "image": "pr", "name": "Paneer Paratha", "des": "Double shot expresso blended with vanilla icecream", "price": "130"
+        },
+        {
+          "colour": "#bbb", "image": "cb", "name": "Special Nizam Biryani", "des": "Double shot expresso blended with vanilla icecream", "price": "300"
+        }]
 
-                                  var div1 = document.createElement("div");
-                            div1.className += "clearfix";
-                            var newElement = document.getElementById("card");
-                            newElement.appendChild(div1);
+      var div1 = document.createElement("div");
+      div1.className += "clearfix";
+      var newElement = document.getElementById("card");
+      newElement.appendChild(div1);
 
 
-                            var div2 = document.createElement("div");
-                            div2.className += "box";
-                            div2.style.backgroundColor = itemInfo[i].colour;
-                            div1.appendChild(div2);
-                            var div3 = document.createElement("div");
-                            div3.className += "pic";
-                            var p = itemInfo[i].image;
-                            div3.style.backgroundImage = "URL('p')";
-                            div2.appendChild(div3);
-                            var div4 = document.createElement("div");
-                            div4.className += "des";
-                            div2.appendChild(div4);
-                            var para1 = document.createElement("p");
-                            para1.className += "name";
-                            var node1 = itemInfo[i].name;
-                            document.createTextNode(node1);
-                            para1.innerHTML = node1;
-                            div4.appendChild(para1);
-                            /* var node1 = document.createTextNode("Nutella Brownie 
-                                    Thick Shakes");
-                            para1.appendChild(node1);*/
-                            var para2 = document.createElement("p");
-                            para2.className += "mat";
-                            var node2 = itemInfo[i].des;
-                            document.createTextNode(node2);
-                            para2.innerHTML = node2;
-                            div4.appendChild(para2);
-                            /*var node2 = document.createTextNode("Good old Nutela laced with
-                                  decadent Brownie and heavenly Vanilla ice cream.");
-                         
-                            para2.appendChild(node2);*/
-                            var div5 = document.createElement("div");
-                            div5.className += "fl";
-                            div2.appendChild(div5);
-                            var para3 = document.createElement("p");
-                            para3.className += "rate";
-                            var node3 = "&#x20b9;" + itemInfo[i].price;
-                            document.createTextNode(node3);
-                            para3.innerHTML = node3;
-                            div5.appendChild(para3);
-                            /*var x = document.createElement("BUTTON");*/
-                          }
+      var div2 = document.createElement("div");
+      div2.className += "box";
+      div2.style.backgroundColor = itemInfo[i].colour;
+      div1.appendChild(div2);
+      var div3 = document.createElement("div");
+      div3.className += "pic";
+      var p = itemInfo[i].image;
+      div3.style.backgroundImage = "URL('p')";
+      div2.appendChild(div3);
+      var div4 = document.createElement("div");
+      div4.className += "des";
+      div2.appendChild(div4);
+      var para1 = document.createElement("p");
+      para1.className += "name";
+      var node1 = itemInfo[i].name;
+      document.createTextNode(node1);
+      para1.innerHTML = node1;
+      div4.appendChild(para1);
+      /* var node1 = document.createTextNode("Nutella Brownie 
+              Thick Shakes");
+      para1.appendChild(node1);*/
+      var para2 = document.createElement("p");
+      para2.className += "mat";
+      var node2 = itemInfo[i].des;
+      document.createTextNode(node2);
+      para2.innerHTML = node2;
+      div4.appendChild(para2);
+      /*var node2 = document.createTextNode("Good old Nutela laced with
+            decadent Brownie and heavenly Vanilla ice cream.");
+   
+      para2.appendChild(node2);*/
+      var div5 = document.createElement("div");
+      div5.className += "fl";
+      div2.appendChild(div5);
+      var para3 = document.createElement("p");
+      para3.className += "rate";
+      var node3 = "&#x20b9;" + itemInfo[i].price;
+      document.createTextNode(node3);
+      para3.innerHTML = node3;
+      div5.appendChild(para3);
+      /*var x = document.createElement("BUTTON");*/
+    }
 
 
 

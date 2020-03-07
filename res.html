@@ -153,13 +153,77 @@
       background-color: goldenrod;
       color: black;
       text-decoration: underline;
+    }
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s;
+    }
+
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-header {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+    }
+
+    .modal-body {
+      padding: 2px 16px;
+    }
   </style>
 </head>
 
 <body>
   <div class="header"><img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><input
       type="text" placeholder="Search.."
-      style="width:800px; margin: 95px 50px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
+      style="width:800px; margin: 95px 150px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
+    <img src="cart.png" style="height: 50px; width: 50px; float: right; margin: -70px 30px 20px 500px;">
   </div>
   <div class="nav">
     <ul>
@@ -281,10 +345,80 @@
         var btn = document.createElement("BUTTON");
         btn.className += "button";
         btn.innerHTML = "Add";
+        btn.onclick = addcart();
+
+
+
         div5.appendChild(btn);
         /*var x = document.createElement("BUTTON");*/
+        function addcart() {
+          var div6 = document.createElement("div");
+          div6.className += "modal";
+          var div7 = document.createElement("div");
+          div7.className += "modal-content";
+          div6.appendChild(div7);
+          var div8 = document.createElement("div");
+          div8.className += "modal-header";
+          div6.appendChild(div8);
+          var x = document.createElement("SPAN");
+          x.className += "close";
+          var t = document.createTextNode("&times");
+          x.appendChild(t);
+          div8.appendChild(x);
+          var div9 = document.createElement("div");
+          div9.className += "modal-body";
+          /*div7.appendChild(div9);*/
+          var node4 = "This is the data area";
+          document.createTextNode(node4);
+          div9.innerHTML = node4;
+          div7.appendChild(div9);
+
+
+
+          /*<div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Header</h2>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+              </div></div>
+
+          </div>*/
+
+
+          // Get the modal
+          var modal = document.getElementById("myModal");
+
+          // Get the button that opens the modal
+          /*var btn = document.getElementById("btn");*/
+
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          // When the user clicks the button, open the modal 
+          btn.onclick = function () {
+            modal.style.display = "block";
+          }
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function () {
+            modal.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+
+        }
       }
-    }
 
 
 

@@ -8,9 +8,7 @@
     }
 
     body {
-      /*background-image: url("bk.jpg");
-      background-repeat: no-repeat;
-      background-size: cover */
+
       position: relative;
     }
 
@@ -26,7 +24,7 @@
     .pic {
       /*width: 100%;*/
       height: 200px;
-      /*background-image: url('bk.jpg');*/
+
       background-repeat: no-repeat;
       background-size: cover;
       border: 1px solid black;
@@ -48,8 +46,7 @@
 
     .fl {
 
-      /* display: flex; */
-      /* flex-wrap: wrap; */
+
       margin-top: auto;
 
 
@@ -101,7 +98,7 @@
       float: right;
       padding-right: 10px;
       margin-right: 10px;
-      /*position: absolute;*/
+
       bottom: inherit;
     }
 
@@ -209,7 +206,7 @@
 
     .modal-header {
       padding: 2px 16px;
-      background-color: #5cb85c;
+      background-color: maroon;
       color: white;
     }
 
@@ -223,7 +220,8 @@
   <div class="header"><img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><input
       type="text" placeholder="Search.."
       style="width:800px; margin: 95px 150px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
-    <img src="cart.png" style="height: 50px; width: 50px; float: right; margin: -70px 30px 20px 500px;">
+    <img src="cart.png" id="myBtn"
+      style="height: 50px; width: 50px; float: right; margin: -70px 30px 20px 500px; cursor: pointer;">
   </div>
   <div class="nav">
     <ul>
@@ -233,12 +231,55 @@
       <li><a href="">My Account</a></li>
     </ul>
   </div>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;">
+        <span class="close">&times;</span>
+
+      </div>
+      <div class="modal-body">
+        <p>Some text in the Modal Body</p>
+        <p>Some other text...</p>
+      </div>
+    </div>
+  </div>
   <div id="card"></div>
 
+
+
   <script type="text/javascript">
+    var modal = document.getElementById("myModal");
+
+
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+      console.log(food);
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
     /*var itemInfo = [{
       "colour": "#bbb", "image": "bk1.jpg", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
     }]*/
+    var food = [];
 
     var itemInfo =
       [{
@@ -292,161 +333,77 @@
 
     var div1 = document.createElement("div");
     div1.className += "clearfix";
-    var i;
-    for (i = 0; i < 1; i++) {
-      for (var item of itemInfo) {
-        var newElement = document.getElementById("card");
-        newElement.appendChild(div1);
+    var index = 1;
 
+    for (var item of itemInfo) {
+      var newElement = document.getElementById("card");
 
-        var div2 = document.createElement("div");
-        div2.className += "box";
-        div2.style.backgroundColor = item.colour;
-        div1.appendChild(div2);
-        var div3 = document.createElement("div");
-        div3.className += "pic";
-        /*var img = document.createElement('img');
-        img.src = itemInfo[i].image;
-        div3.style.backgroundImage = "URL('itemInfo[i].image')";*/
-        var p = item.image + '.jpg';
-        div3.style.backgroundImage = "URL(" + item.image + '.jpg' + ")";
-        div2.appendChild(div3);
-        var div4 = document.createElement("div");
-        div4.className += "des";
-        div2.appendChild(div4);
-        var para1 = document.createElement("p");
-        para1.className += "name";
-        var node1 = item.name;
-        document.createTextNode(node1);
-        para1.innerHTML = node1;
-        div4.appendChild(para1);
-        /* var node1 = document.createTextNode("Nutella Brownie 
-                Thick Shakes");
-        para1.appendChild(node1);*/
-        var para2 = document.createElement("p");
-        para2.className += "mat";
-        var node2 = item.des;
-        document.createTextNode(node2);
-        para2.innerHTML = node2;
-        div4.appendChild(para2);
-        /*var node2 = document.createTextNode("Good old Nutela laced with
-              decadent Brownie and heavenly Vanilla ice cream.");
-     
-        para2.appendChild(node2);*/
-        var div5 = document.createElement("div");
-        div5.className += "fl";
-        div2.appendChild(div5);
-        var para3 = document.createElement("p");
-        para3.className += "rate";
-        var node3 = "&#x20b9;" + item.price;
-        document.createTextNode(node3);
-        para3.innerHTML = node3;
-        div5.appendChild(para3);
-        var btn = document.createElement("BUTTON");
-        btn.className += "button";
-        btn.innerHTML = "Add";
-        btn.onclick = addcart();
+      /*newElement.id = "card" + index;*/
 
+      newElement.appendChild(div1);
 
+      var div2 = document.createElement("div");
 
-        div5.appendChild(btn);
-        /*var x = document.createElement("BUTTON");*/
-        function addcart() {
-          var div6 = document.createElement("div");
-          div6.className += "modal";
-          var div7 = document.createElement("div");
-          div7.className += "modal-content";
-          div6.appendChild(div7);
-          var div8 = document.createElement("div");
-          div8.className += "modal-header";
-          div6.appendChild(div8);
-          var x = document.createElement("SPAN");
-          x.className += "close";
-          var t = document.createTextNode("&times");
-          x.appendChild(t);
-          div8.appendChild(x);
-          var div9 = document.createElement("div");
-          div9.className += "modal-body";
-          /*div7.appendChild(div9);*/
-          var node4 = "This is the data area";
-          document.createTextNode(node4);
-          div9.innerHTML = node4;
-          div7.appendChild(div9);
+      div2.className += "box";
+      div2.style.backgroundColor = item.colour;
+      div1.appendChild(div2);
+      var div3 = document.createElement("div");
+      div3.className += "pic";
+      /*var img = document.createElement('img');
+      img.src = itemInfo[i].image;
+      div3.style.backgroundImage = "URL('itemInfo[i].image')";*/
+      var p = item.image + '.jpg';
+      div3.style.backgroundImage = "URL(" + item.image + '.jpg' + ")";
+      div2.appendChild(div3);
+      var div4 = document.createElement("div");
+      div4.className += "des";
+      div2.appendChild(div4);
+      var para1 = document.createElement("p");
+      para1.className += "name";
+      var node1 = item.name;
+      document.createTextNode(node1);
+      para1.innerHTML = node1;
+      div4.appendChild(para1);
 
+      var para2 = document.createElement("p");
+      para2.className += "mat";
+      var node2 = item.des;
+      document.createTextNode(node2);
+      para2.innerHTML = node2;
+      div4.appendChild(para2);
 
+      var div5 = document.createElement("div");
+      div5.className += "fl";
+      div2.appendChild(div5);
+      var para3 = document.createElement("p");
+      para3.className += "rate";
+      var node3 = "&#x20b9;" + item.price;
+      document.createTextNode(node3);
+      para3.innerHTML = node3;
+      div5.appendChild(para3);
 
-          /*<div id="myModal" class="modal">
+      var btn = document.createElement("BUTTON");
+      btn.className += "button";
+      btn.innerHTML = "Add";
+      btn.id = "btn" + index;
+      btn.onclick = function addcart() {
 
-            <!-- Modal content -->
-            <div class="modal-content">
-              <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Modal Header</h2>
-              </div>
-              <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
-              </div></div>
+        food.push(btn.id);
+        console.log(item);
 
-          </div>*/
-
-
-          // Get the modal
-          var modal = document.getElementById("myModal");
-
-          // Get the button that opens the modal
-          /*var btn = document.getElementById("btn");*/
-
-          // Get the <span> element that closes the modal
-          var span = document.getElementsByClassName("close")[0];
-
-          // When the user clicks the button, open the modal 
-          btn.onclick = function () {
-            modal.style.display = "block";
-          }
-
-          // When the user clicks on <span> (x), close the modal
-          span.onclick = function () {
-            modal.style.display = "none";
-          }
-
-          // When the user clicks anywhere outside of the modal, close it
-          window.onclick = function (event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          }
-
-        }
       }
 
 
+      div5.appendChild(btn);
+      index++;
+
+    }
 
 
 
 
-
-
-
-
-
-
-    /* <div class="clearfix">
-       <div class="box" style="background-color: #bbb">
-         <div class="pic" style="background-image: url('bk1.jpg');"></div>
-         <div class="des">
-           <p class="name"><b>Nutella Brownie
-             Thick Shakes</b>
-           </p>
-           <p class="mat"> Good old Nutela laced with
-           decadent Brownie and heavenly Vanilla ice cream. </p>
-           <div class="fl">
-             <p style=" width:50%; float:left;"><b>&#x20b9; 200/-</b></p>
-             <input type="button" class="button" name="Add" value="Add" />
-           </div>
-         </div>
-       </div>*/
   </script>
 </body>
+
 
 </html>

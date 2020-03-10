@@ -91,15 +91,16 @@
     }
 
     .button {
-      border-radius: 8px;
+      /*border-radius: 8px;
       height: 40px;
-      display: inline;
-      width: 80px;
+      display: inline;*/
+      width: 20px;
       float: right;
-      padding-right: 10px;
-      margin-right: 10px;
+      /*padding-right: 10px;
+      margin-right: 10px;*/
 
       bottom: inherit;
+
     }
 
     .header {
@@ -213,6 +214,14 @@
     .modal-body {
       padding: 2px 16px;
     }
+
+    .tf {
+      width: 35px;
+      text-align: center;
+      margin-top: 15px;
+      margin-left: 45px;
+
+    }
   </style>
 </head>
 
@@ -220,8 +229,8 @@
   <div class="header"><img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><input
       type="text" placeholder="Search.."
       style="width:800px; margin: 95px 150px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
-    <img src="cart.png" id="myBtn"
-      style="height: 50px; width: 50px; float: right; margin: -70px 30px 20px 500px; cursor: pointer;">
+    <img src="cart.png" id="myBtn" style="height: 50px; width: 50px; float: right;  cursor: pointer;">
+    <!--margin: -70px 30px 20px 500px;-->
   </div>
   <div class="nav">
     <ul>
@@ -231,6 +240,7 @@
       <li><a href="">My Account</a></li>
     </ul>
   </div>
+
   <div id="myModal" class="modal">
 
     <!-- Modal content -->
@@ -241,7 +251,7 @@
 
       </div>
       <div class="modal-body">
-        <p>Some text in the Modal Body</p>
+        <p id="demo"></p>
         <p>Some other text...</p>
       </div>
     </div>
@@ -263,7 +273,28 @@
     btn.onclick = function () {
       modal.style.display = "block";
       console.log(food);
+      var orderItems = [];
+      for (var key in food) {
+        var item = itemInfo[parseInt(key) - 1];
+        item.quantity = food[key];
+        orderItems.push(item);
+      }
+      for (var i of orderItems) {
+        var a = item.quantity;
+        var y = i.name;
+        var z = i.price;
+
+
+
+
+        document.getElementById("demo").innerHTML += y + "" + z + "" + a;
+
+      }
     }
+
+
+
+
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
@@ -279,7 +310,7 @@
     /*var itemInfo = [{
       "colour": "#bbb", "image": "bk1.jpg", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
     }]*/
-    var food = [];
+    var food = {};
 
     var itemInfo =
       [{
@@ -382,14 +413,24 @@
       para3.innerHTML = node3;
       div5.appendChild(para3);
 
-      var btn = document.createElement("BUTTON");
+      var x = document.createElement("INPUT");
+      x.id = index;
+      x.setAttribute("type", "number");
+      x.setAttribute("value", 0);
+      x.setAttribute("min", 0);
+      x.className += "tf";
+      div5.appendChild(x);
+      /*var btn = document.createElement("BUTTON");
       btn.className += "button";
       btn.innerHTML = "Add";
-      btn.id = "btn" + index;
-      btn.onclick = function addcart() {
+      btn.id = index;*/
+      x.onchange = function () {
 
-        food.push(btn.id);
-        console.log(item);
+        /*food.push(itemInfo[parseInt(event.toElement.id) - 1]);*/
+        console.log(event);
+        console.log(event.srcElement.value);
+        console.log(event.srcElement.id);
+        food[event.srcElement.id] = event.srcElement.value;
 
       }
 

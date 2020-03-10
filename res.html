@@ -250,9 +250,8 @@
         <span class="close">&times;</span>
 
       </div>
-      <div class="modal-body">
-        <p id="demo"></p>
-        <p>Some other text...</p>
+      <div class="modal-body" id="modalBody">
+
       </div>
     </div>
   </div>
@@ -274,12 +273,19 @@
       modal.style.display = "block";
       console.log(food);
       var orderItems = [];
+
       for (var key in food) {
         var item = itemInfo[parseInt(key) - 1];
         item.quantity = food[key];
         orderItems.push(item);
       }
+      var modalBody = document.getElementByClass("modal-body")[0];
       for (var i of orderItems) {
+        var n = document.createElement("div");
+        modalBody.innerHtml = i.name + "" + i.price;
+        modalBody.appendChild(n);
+      }
+      /*for (var i of orderItems) {
         var a = item.quantity;
         var y = i.name;
         var z = i.price;
@@ -289,7 +295,7 @@
 
         document.getElementById("demo").innerHTML += y + "" + z + "" + a;
 
-      }
+      }*/
     }
 
 

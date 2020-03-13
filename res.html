@@ -2,235 +2,17 @@
 <html>
 
 <head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    body {
-
-      position: relative;
-    }
-
-    .box {
-      margin: 20px 0px 20px 30px;
-      float: left;
-      width: 20%;
-      /*height: 350px;*/
-
-
-    }
-
-    .pic {
-      /*width: 100%;*/
-      height: 200px;
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      border: 1px solid black;
-      margin: 10px 20px 10px 20px;
-
-    }
-
-
-    .clearfix {
-      content: "";
-      clear: both;
-      display: flex;
-      height: 100vh;
-      flex-wrap: wrap;
-      align-content: space-between;
-      justify-content: space-around;
-      padding-right: 30px;
-    }
-
-    .fl {
-
-
-      margin-top: auto;
-
-
-
-
-
-    }
-
-    .des {
-
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      position: relative;
-      height: 100px;
-
-
-    }
-
-    .name {
-      font-size: large;
-      margin-bottom: 0px;
-      padding-bottom: 0px;
-      margin-top: 0px;
-      font-weight: bold;
-
-
-    }
-
-    .mat {
-      padding-top: 0px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
-
-    .rate {
-      width: 50%;
-      float: left;
-      margin-left: 10px;
-      font-weight: bold;
-
-    }
-
-    .button {
-      /*border-radius: 8px;
-      height: 40px;
-      display: inline;*/
-      width: 20px;
-      float: right;
-      /*padding-right: 10px;
-      margin-right: 10px;*/
-
-      bottom: inherit;
-
-    }
-
-    .header {
-      background-color: maroon;
-      width: 100%;
-      height: 150px;
-
-    }
-
-    .nav {
-      width: 100%;
-      height: 75px;
-      display: flex;
-      flex-wrap: wrap;
-      align-content: space-between;
-      background-color: burlywood;
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      padding: 0px;
-    }
-
-    .nav ul {
-      list-style-type: none;
-      padding: 0px;
-
-    }
-
-    .nav li {
-      color: black;
-      float: left;
-      font-size: x-large;
-      border-right: 2px solid black;
-      text-align: center;
-      height: max-content;
-      width: 250px;
-    }
-
-    .nav li a {
-      display: block;
-
-
-      text-decoration: none;
-
-    }
-
-    .nav a:hover {
-      background-color: goldenrod;
-      color: black;
-      text-decoration: underline;
-    }
-
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      padding-top: 100px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
-    }
-
-    /* Modal Content */
-    .modal-content {
-      position: relative;
-      background-color: #fefefe;
-      margin: auto;
-      padding: 0;
-      border: 1px solid #888;
-      width: 80%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      -webkit-animation-name: animatetop;
-      -webkit-animation-duration: 0.4s;
-      animation-name: animatetop;
-      animation-duration: 0.4s;
-    }
-
-    .close {
-      color: white;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .modal-header {
-      padding: 2px 16px;
-      background-color: maroon;
-      color: white;
-    }
-
-    .modal-body {
-      padding: 2px 16px;
-    }
-
-    .tf {
-      width: 35px;
-      text-align: center;
-      margin-top: 15px;
-      margin-left: 45px;
-
-    }
-  </style>
+  <link rel="stylesheet" href="res.css">
 </head>
 
 <body>
-  <div class="header"><img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><input
-      type="text" placeholder="Search.."
+  <div class="header">
+    <img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;">
+    <input type="text" placeholder="Search.."
       style="width:800px; margin: 95px 150px 20px 50px; float:right; padding: 10px 10px 10px 10px; border-radius: 8px;">
-    <img src="cart.png" id="myBtn" style="height: 50px; width: 50px; float: right;  cursor: pointer;">
-    <!--margin: -70px 30px 20px 500px;-->
+    <img src="cart.png" id="myBtn"
+      style="height: 50px; width: 50px;margin: -70px 30px 20px 500px; float: right;  cursor: pointer;">
   </div>
   <div class="nav">
     <ul>
@@ -241,6 +23,8 @@
     </ul>
   </div>
 
+
+
   <div id="myModal" class="modal">
 
     <!-- Modal content -->
@@ -250,12 +34,18 @@
         <span class="close">&times;</span>
 
       </div>
-      <div class="modal-body" id="modalBody">
+      <div class="modal-body" id="modal-body">
+
+      </div>
+      <div class="modal-footer" id="modal-footer">
+        <input type="button" class="cfmbtn" name="FooterButton" value="Confirm Order"
+          onclick="alert('Your order has been confirmed Thankyou!');" />
+
 
       </div>
     </div>
   </div>
-  <div id="card"></div>
+  <div id="clearfix"></div>
 
 
 
@@ -270,33 +60,57 @@
 
     // When the user clicks the button, open the modal 
     btn.onclick = function () {
+      var modalBody = document.getElementById("modal-body");
       modal.style.display = "block";
-      console.log(food);
-      var orderItems = [];
-
-      for (var key in food) {
-        var item = itemInfo[parseInt(key) - 1];
-        item.quantity = food[key];
-        orderItems.push(item);
+      if ((food != undefined || food != null) && (Object.keys(food).length == 0)) {
+        var node0 = "Select items to add into cart ";
+        document.createTextNode(node0);
+        modalBody.innerHTML = node0;
       }
-      var modalBody = document.getElementByClass("modal-body")[0];
-      for (var i of orderItems) {
-        var n = document.createElement("div");
-        modalBody.innerHtml = i.name + "" + i.price;
-        modalBody.appendChild(n);
+      else {
+
+
+        var orderItems = [];
+
+        for (var key in food) {
+          var item = itemInfo[parseInt(key) - 1];
+          item.quantity = food[key];
+
+          orderItems.push(item);
+        }
+
+
+        while (modalBody.firstChild) {
+          modalBody.removeChild(modalBody.firstChild);
+        }
+
+
+        var newTable = '<table id="priceTable" style="width:100%;">' + '<tr>' + '<th style="width:25%">Item Name</th>' + '<th style="width:25%">Price</th>' + '<th style="width:25%">Quantity</th>' + '<th style="width:25%">Rate</th>' + '</tr>' + '</table>';
+
+        modalBody.insertAdjacentHTML('beforeend', newTable);
+        var priceTable = document.getElementById("priceTable");
+        var total = 0;
+
+        for (var i of orderItems) {
+          i.rate = i.price * i.quantity;
+          total += parseInt(i.rate);
+
+          var trow = '<tr>';
+          trow += '<td style="width:25%; text-align:center;">' + i.name + '</td>' + '<td style="width:25% ; text-align:center;" >' + i.price + '</td>' + '<td style="width:25%;text-align:center;">' + i.quantity + '</td>' + '<td style="width:25%;text-align:center;">' + i.rate + '</td>' + '</tr>';
+
+          priceTable.insertAdjacentHTML('beforeend', trow);
+        }
+        var t2row = '<tr>' + '<td colspan="3" style="text-align:right;"> Total Amount</td>' + '<td style="text-align:center;">' + total + '</td>' + '</tr>';
+        priceTable.insertAdjacentHTML('beforeend', t2row);
+
+
+        var modalFooter = document.getElementById("modal-footer");
+        modalFooter.style.display = "block";
+
       }
-      /*for (var i of orderItems) {
-        var a = item.quantity;
-        var y = i.name;
-        var z = i.price;
-
-
-
-
-        document.getElementById("demo").innerHTML += y + "" + z + "" + a;
-
-      }*/
     }
+
+
 
 
 
@@ -313,9 +127,8 @@
         modal.style.display = "none";
       }
     }
-    /*var itemInfo = [{
-      "colour": "#bbb", "image": "bk1.jpg", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
-    }]*/
+
+
     var food = {};
 
     var itemInfo =
@@ -368,30 +181,53 @@
         "colour": "#bbb", "image": "cb", "name": "Special Nizam Biryani", "des": "Double shot expresso blended with vanilla icecream", "price": "300"
       }]
 
-    var div1 = document.createElement("div");
+    var div1 = document.getElementById("clearfix");
     div1.className += "clearfix";
     var index = 1;
 
+
     for (var item of itemInfo) {
-      var newElement = document.getElementById("card");
+      // var div1 = document.getElementById("clearfix");
 
-      /*newElement.id = "card" + index;*/
+      // newCard.appendChild(div1);
 
-      newElement.appendChild(div1);
 
       var div2 = document.createElement("div");
+
 
       div2.className += "box";
       div2.style.backgroundColor = item.colour;
       div1.appendChild(div2);
+
+
+
+
+
       var div3 = document.createElement("div");
+      div3.id = "card" + index;
       div3.className += "pic";
-      /*var img = document.createElement('img');
-      img.src = itemInfo[i].image;
-      div3.style.backgroundImage = "URL('itemInfo[i].image')";*/
       var p = item.image + '.jpg';
       div3.style.backgroundImage = "URL(" + item.image + '.jpg' + ")";
       div2.appendChild(div3);
+      div3.onclick = function () {
+
+        modal.style.display = "block";
+        var mainBody = document.getElementById("modal-body");
+        while (mainBody.firstChild) {
+          mainBody.removeChild(mainBody.firstChild);
+        }
+        mainBody.style.content = "center";
+        var ret = parseInt(event.toElement.id.replace('card', ''));
+        var clickedItem = itemInfo[ret - 1];
+        var img = document.createElement('img');
+        img.style.height = "350px";
+        img.style.width = "350px";
+        img.style.marginLeft = "400px";
+        img.src = clickedItem.image + ".jpg";
+        mainBody.appendChild(img);
+        var info = '<p>' + '<b>' + clickedItem.name + '</b>' + " --- " + '<b>' + "&#x20b9;" + clickedItem.price + '</b>' + '</p>' + '<p>' + clickedItem.des + '</p>';
+        mainBody.insertAdjacentHTML('beforeend', info);
+      }
       var div4 = document.createElement("div");
       div4.className += "des";
       div2.appendChild(div4);
@@ -426,22 +262,15 @@
       x.setAttribute("min", 0);
       x.className += "tf";
       div5.appendChild(x);
-      /*var btn = document.createElement("BUTTON");
-      btn.className += "button";
-      btn.innerHTML = "Add";
-      btn.id = index;*/
+
       x.onchange = function () {
 
-        /*food.push(itemInfo[parseInt(event.toElement.id) - 1]);*/
-        console.log(event);
-        console.log(event.srcElement.value);
-        console.log(event.srcElement.id);
         food[event.srcElement.id] = event.srcElement.value;
 
       }
 
 
-      div5.appendChild(btn);
+
       index++;
 
     }

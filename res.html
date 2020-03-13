@@ -22,115 +22,73 @@
       <li><a href="">My Account</a></li>
     </ul>
   </div>
-
-
-
   <div id="myModal" class="modal">
-
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
         <img src="logo1.jpg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;">
         <span class="close">&times;</span>
-
       </div>
       <div class="modal-body" id="modal-body">
-
       </div>
       <div class="modal-footer" id="modal-footer">
         <input type="button" class="cfmbtn" name="FooterButton" value="Confirm Order"
           onclick="alert('Your order has been confirmed Thankyou!');" />
-
-
       </div>
     </div>
   </div>
   <div id="clearfix"></div>
 
-
-
   <script type="text/javascript">
     var modal = document.getElementById("myModal");
-
-
     var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
     btn.onclick = function () {
       var modalBody = document.getElementById("modal-body");
       modal.style.display = "block";
+      var modalFooter = document.getElementById("modal-footer");
       if ((food != undefined || food != null) && (Object.keys(food).length == 0)) {
         var node0 = "Select items to add into cart ";
         document.createTextNode(node0);
         modalBody.innerHTML = node0;
+        modalFooter.style.display = "none";
       }
       else {
-
-
         var orderItems = [];
-
         for (var key in food) {
           var item = itemInfo[parseInt(key) - 1];
           item.quantity = food[key];
-
           orderItems.push(item);
         }
-
-
         while (modalBody.firstChild) {
           modalBody.removeChild(modalBody.firstChild);
         }
-
-
         var newTable = '<table id="priceTable" style="width:100%;">' + '<tr>' + '<th style="width:25%">Item Name</th>' + '<th style="width:25%">Price</th>' + '<th style="width:25%">Quantity</th>' + '<th style="width:25%">Rate</th>' + '</tr>' + '</table>';
-
         modalBody.insertAdjacentHTML('beforeend', newTable);
         var priceTable = document.getElementById("priceTable");
         var total = 0;
-
         for (var i of orderItems) {
           i.rate = i.price * i.quantity;
           total += parseInt(i.rate);
-
           var trow = '<tr>';
           trow += '<td style="width:25%; text-align:center;">' + i.name + '</td>' + '<td style="width:25% ; text-align:center;" >' + i.price + '</td>' + '<td style="width:25%;text-align:center;">' + i.quantity + '</td>' + '<td style="width:25%;text-align:center;">' + i.rate + '</td>' + '</tr>';
-
           priceTable.insertAdjacentHTML('beforeend', trow);
         }
         var t2row = '<tr>' + '<td colspan="3" style="text-align:right;"> Total Amount</td>' + '<td style="text-align:center;">' + total + '</td>' + '</tr>';
         priceTable.insertAdjacentHTML('beforeend', t2row);
 
-
-        var modalFooter = document.getElementById("modal-footer");
         modalFooter.style.display = "block";
-
       }
     }
-
-
-
-
-
-
-
-    // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
       modal.style.display = "none";
     }
-
-    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
     }
-
-
     var food = {};
-
     var itemInfo =
       [{
         "colour": "#bbb", "image": "bk1", "name": "Nutella Brownie Thick Shakes", "des": "Good old Nutela laced with decadent Brownie and heavenly Vanilla ice cream.", "price": "200"
@@ -180,29 +138,14 @@
       {
         "colour": "#bbb", "image": "cb", "name": "Special Nizam Biryani", "des": "Double shot expresso blended with vanilla icecream", "price": "300"
       }]
-
     var div1 = document.getElementById("clearfix");
     div1.className += "clearfix";
     var index = 1;
-
-
     for (var item of itemInfo) {
-      // var div1 = document.getElementById("clearfix");
-
-      // newCard.appendChild(div1);
-
-
       var div2 = document.createElement("div");
-
-
       div2.className += "box";
       div2.style.backgroundColor = item.colour;
       div1.appendChild(div2);
-
-
-
-
-
       var div3 = document.createElement("div");
       div3.id = "card" + index;
       div3.className += "pic";
@@ -210,7 +153,8 @@
       div3.style.backgroundImage = "URL(" + item.image + '.jpg' + ")";
       div2.appendChild(div3);
       div3.onclick = function () {
-
+        var modalFooter = document.getElementById("modal-footer");
+        modalFooter.style.display = "none";
         modal.style.display = "block";
         var mainBody = document.getElementById("modal-body");
         while (mainBody.firstChild) {
@@ -237,14 +181,12 @@
       document.createTextNode(node1);
       para1.innerHTML = node1;
       div4.appendChild(para1);
-
       var para2 = document.createElement("p");
       para2.className += "mat";
       var node2 = item.des;
       document.createTextNode(node2);
       para2.innerHTML = node2;
       div4.appendChild(para2);
-
       var div5 = document.createElement("div");
       div5.className += "fl";
       div2.appendChild(div5);
@@ -254,7 +196,6 @@
       document.createTextNode(node3);
       para3.innerHTML = node3;
       div5.appendChild(para3);
-
       var x = document.createElement("INPUT");
       x.id = index;
       x.setAttribute("type", "number");
@@ -262,24 +203,18 @@
       x.setAttribute("min", 0);
       x.className += "tf";
       div5.appendChild(x);
-
       x.onchange = function () {
+        if (food[event.srcElement.id] != 0 && event.srcElement.value == 0) {
+          delete food[event.srcElement.id];
+        }
+        else
+          food[event.srcElement.id] = event.srcElement.value;
 
-        food[event.srcElement.id] = event.srcElement.value;
 
       }
-
-
-
       index++;
-
     }
-
-
-
-
   </script>
 </body>
-
 
 </html>
